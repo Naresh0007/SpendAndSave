@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SpendAndSave.Converters"
+             x:Class="SpendAndSave.Views.EditProfilePage"
+             Title="Edit Profile"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<!-- Register the ImageSourceConverter -->
+			<local:ImageSourceConverter x:Key="ImageSourceConverter"/>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0" Padding="10" Margin="10">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Image Source="back.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Tapped="OnBackButtonClicked"/>
+				</Image.GestureRecognizers>
+			</Image>
+
+			<Label Text="Update Your Profile" FontAttributes="Bold" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" />
+		</Grid>
+
+		<ScrollView Grid.Row="2" Margin="0,25,0,0">
+			<Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All" Margin="20,100,20,20">
+				<!-- Adjusted top margin to account for the image height -->
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<!-- Profile Picture -->
+				<StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="10">
+					<Image x:Name="ProfilePicture" WidthRequest="100" HeightRequest="100" Aspect="AspectFill">
+						<Image.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnChangeProfilePictureClicked"/>
+						</Image.GestureRecognizers>
+					</Image>
+				</StackLayout>
+
+				<!-- Profile Details -->
+				<StackLayout Grid.Row="1" StyleClass="stacklayout" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="10">
+					<Entry x:Name="FullNameEntry" Placeholder="Enter Your Full Name" Style="{StaticResource EntryStyle}" Margin="10,0,10,10"/>
+					<Entry x:Name="EmailEntry" Placeholder="Enter your Email" Style="{StaticResource EntryStyle}" Margin="10,0,10,10"/>
+					<Entry x:Name="MobileEntry" Placeholder="Enter your Mobile Number" Style="{StaticResource EntryStyle}" Margin="10,0,10,10"/>
+					<Entry x:Name="UserNameEntry" Placeholder="Enter Username" Style="{StaticResource EntryStyle}" Margin="10,0,10,10"/>
+					<Button Text="Update Profile" FontAttributes="Bold" Clicked="OnUpdateButtonClicked" Style="{StaticResource ButtonStyle}" Margin="10,40,10,10"/>
+				</StackLayout>
+			</Grid>
+		</ScrollView>
+	</Grid>
+</ContentPage>

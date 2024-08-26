@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SpendAndSave.Converters" 
+             x:Class="SpendAndSave.Views.GoalPage"
+             Title="Goals"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Register the ImageSourceConverter -->
+            <local:ImageSourceConverter x:Key="ImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Padding="10" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="back.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackButtonClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <Label Text="Goals" FontAttributes="Bold" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" />
+
+            <Image Source="add.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAddButtonClicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+        </Grid>
+
+        <ScrollView Grid.Row="2" Margin="0,25,0,0">
+            <Frame BackgroundColor="White" CornerRadius="10" BorderColor="Transparent" >
+                <Grid>
+                    <Grid Padding="10,0,0,0">
+                        <StackLayout Spacing="10">
+                            <Label Text="Your Goals" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
+
+                            <ListView x:Name="goalsListView" ItemsSource="{Binding Goals}" HasUnevenRows="True">
+                                <ListView.ItemTemplate BackgroundColor="Transparent" CornerRadius="10" HasShadow="True" BorderColor="Transparent">
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <Grid Padding="10">
+                                                <Grid.RowDefinitions>
+                                                   <RowDefinition Height="Auto" />
+                                                   <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding GoalImage}" WidthRequest="35" HeightRequest="35" Margin="0,0,15,0" Grid.RowSpan="2" Grid.Column="0" VerticalOptions="Center"/>
+                                                <StackLayout Spacing="5" Grid.Row="1" Grid.Column="1" VerticalOptions="Center">
+                                                    <Label Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                                    <ProgressBar x:Name="SavingsBar" Progress="{Binding GoalProgress}" ProgressColor="Orange" />
+                                                    <Label Text="{Binding GoalProgressLabel}" HorizontalOptions="Center" VerticalOptions="Center" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Grid.RowSpan="2" Grid.Column="2" Spacing="5" Margin="15,0,0,0">
+                                                    <Image Source="open.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="End">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnUpdateButtonClicked"/>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Image Source="delete.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="End">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnDeleteButtonClicked"/>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </StackLayout>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                        </StackLayout>
+
+                    </Grid>
+                </Grid>
+            </Frame>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,133 @@
+is_global = true
+build_property.TargetFramework = net7.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SpendAndSave
+build_property.ProjectDir = C:\Users\rshrestha\OneDrive - Australian Medical Association\Desktop\spnd\SpendAndSave\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/AddBudgetPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.AddBudgetPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddBudgetPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddBudgetPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/AddExpensePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.AddExpensePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddExpensePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddExpensePage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/AddGoalPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.AddGoalPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddGoalPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddGoalPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/AddSavingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.AddSavingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddSavingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddSavingPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/BudgetPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.BudgetPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\BudgetPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\BudgetPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/DashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.DashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DashboardPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/EditProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.EditProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditProfilePage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/ExpensePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.ExpensePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ExpensePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ExpensePage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/GoalPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.GoalPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\GoalPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\GoalPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/MonthYearSelectionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.MonthYearSelectionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MonthYearSelectionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MonthYearSelectionPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/OverViewPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.OverViewPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\OverViewPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\OverViewPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/RegistrationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.RegistrationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegistrationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegistrationPage.xaml
+
+[C:/Users/rshrestha/OneDrive - Australian Medical Association/Desktop/spnd/SpendAndSave/Views/Welcome.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SpendAndSave.Views.Welcome.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Welcome.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Welcome.xaml

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SpendAndSave.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SpendAndSave"
+    xmlns:mylogin="clr-namespace:SpendAndSave.Views"
+    Shell.FlyoutBehavior="Disabled"
+    x:Name="MyAppShell"
+    Title="SpendAndSave">
+
+    <FlyoutItem Route="Login" x:Name="MyLoginPage">
+
+        <ShellContent ContentTemplate="{DataTemplate mylogin:LoginPage}"></ShellContent>
+
+    </FlyoutItem>
+    <FlyoutItem Title="Home" Icon="dashboard.png">
+        <ShellContent ContentTemplate="{DataTemplate mylogin:DashboardPage}" />
+    </FlyoutItem>
+
+    <ShellContent x:Name="DashboardPage"
+        Title="Home"
+        ContentTemplate="{DataTemplate mylogin:DashboardPage}"
+        Route="Dashboard" />
+    <ShellContent x:Name="WelcomePage"
+        ContentTemplate="{DataTemplate mylogin:WelcomePage}"
+        Route="WelcomePage" />
+
+</Shell>
+

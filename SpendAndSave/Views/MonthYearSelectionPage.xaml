@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpendAndSave.Views.MonthYearSelectionPage"
+             Title="Select Month and Year">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center"
+          WidthRequest="350" HeightRequest="250">
+       
+            <StackLayout Spacing="20">
+                <Label Text="Select Month" FontAttributes="Bold" FontSize="18"/>
+                <Picker x:Name="monthPicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>January</x:String>
+                            <x:String>February</x:String>
+                            <x:String>March</x:String>
+                            <x:String>April</x:String>
+                            <x:String>May</x:String>
+                            <x:String>June</x:String>
+                            <x:String>July</x:String>
+                            <x:String>August</x:String>
+                            <x:String>September</x:String>
+                            <x:String>October</x:String>
+                            <x:String>November</x:String>
+                            <x:String>December</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Select Year" FontAttributes="Bold" FontSize="18"/>
+                <Picker x:Name="yearPicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <!-- Adjust years as needed -->
+                            <x:Int32>2021</x:Int32>
+                            <x:Int32>2022</x:Int32>
+                            <x:Int32>2023</x:Int32>
+                            <x:Int32>2024</x:Int32>
+                            <x:Int32>2025</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="OK" Clicked="OnOkButtonClicked" Margin="5"/>
+                    <Button Text="Cancel" Clicked="OnCancelButtonClicked" Margin="5"/>
+                </StackLayout>
+            </StackLayout>
+       
+    </Grid>
+</ContentPage>

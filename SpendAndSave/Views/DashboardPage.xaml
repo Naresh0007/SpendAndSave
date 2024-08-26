@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpendAndSave.Views.DashboardPage"
+             Title="DashboardPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Row 0 for top bar -->
+            <RowDefinition Height="*"/>
+            <!-- Row 1 for main content -->
+        </Grid.RowDefinitions>
+
+        <!-- Top bar in Row 0 -->
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource NavBarBackground}" Padding="10" Margin="20">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="10">
+                <!-- Profile picture  -->
+                <Frame CornerRadius="50" WidthRequest="100" HeightRequest="100" IsClippedToBounds="True" BackgroundColor="Black" BorderColor="Transparent" Padding="0" HorizontalOptions="Center">
+                    <Image x:Name="ProfileImage" Aspect="AspectFit" WidthRequest="100" HeightRequest="100" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProfileTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                    <Label Text="Welcome " HorizontalOptions="EndAndExpand" FontAttributes="Bold" Margin="0,20,0,0" />
+                    <Label x:Name="usernameLabel" HorizontalOptions="Start" Margin="0,20,0,0" FontAttributes="Bold"/>
+                    <Label Text=" ! " HorizontalOptions="EndAndExpand" FontAttributes="Bold" Margin="0,20,0,0" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+
+        <!-- Main content in Row 1 -->
+        <StackLayout Grid.Row="1" StyleClass="stacklayout" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="10">
+            <!-- Welcome text 
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="10">
+                <Label Text="Welcome " HorizontalOptions="EndAndExpand" FontAttributes="Bold" Margin="0,20,0,0" />
+                <Label x:Name="usernameLabel" HorizontalOptions="Start" Margin="0,20,0,0" FontAttributes="Bold"/>
+                <Label Text=" ! " HorizontalOptions="EndAndExpand" FontAttributes="Bold" Margin="0,20,0,0" />
+            </StackLayout>-->
+
+            <!-- Four boxes with icon and text -->
+            <Grid Margin="10,40,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Box 1 -->
+                <Frame Grid.Row="0" Grid.Column="0"  BackgroundColor="#F8ACAC" Margin="0,15,15,15" CornerRadius="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnExpenseTapped" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="expense.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="70"/>
+                        <Label Text="Expenses" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Box 2 -->
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#5C90F4" Margin="15,15,0,15" CornerRadius="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBudgetTapped" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="budget.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="70"/>
+                        <Label Text="Budget" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Box 3 -->
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#F5D276" Margin="0,15,15,15" CornerRadius="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnOverviewTapped" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="overview.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="70"/>
+                        <Label Text="Overview" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Box 4 -->
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#BCF582" Margin="15,15,0,15" CornerRadius="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGoalTapped" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="goal.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="70"/>
+                        <Label Text="Goal" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Logout button -->
+            <Button Text="Logout" Clicked="OnLogoutButtonClicked" Style="{StaticResource ButtonStyle}" Margin="10,50,10,10"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

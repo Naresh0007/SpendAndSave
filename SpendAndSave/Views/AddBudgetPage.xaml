@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:SpendAndSave.Controls"
+             x:Class="SpendAndSave.Views.AddBudgetPage"
+             Title="Add Expense"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Row 0 for top bar -->
+            <RowDefinition Height="*"/>    <!-- Row 1 for main content -->
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Padding="10" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="back.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackButtonClicked"/>
+                </Image.GestureRecognizers>
+            </Image>    
+
+            <!-- Title in the middle -->
+            <Label Text="Add Budget" FontAttributes="Bold" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" />
+
+        </Grid>
+
+        <!-- Main content in Row 1 -->
+        <ScrollView Grid.Row="1" Padding="10"  Margin="10">
+            <StackLayout Spacing="20">
+                <!-- Expense Entry Type -->
+                <StackLayout>
+                    <Label Text="Category" FontAttributes="Bold" Margin="0,0,0,15"/>
+                    <Entry x:Name="categoryEntry" />
+                </StackLayout>
+
+                <!-- Amount -->
+                <StackLayout>
+                    <Label Text="Amount" FontAttributes="Bold" Margin="0,0,0,15"/>
+                    <Entry x:Name="amountEntry" Keyboard="Numeric" />
+                </StackLayout>
+                
+                <!-- Date -->
+                <StackLayout>
+                    <Label Text="Date" FontAttributes="Bold" />
+                    <DatePicker x:Name="datePicker" Format="MMMM yyyy" DateSelected="OnDateSelected"/>
+                </StackLayout>
+
+                <!-- Save Budget Button -->
+                <Button Text="Save Budget" Clicked="OnSaveBudgetButtonClicked" Style="{StaticResource ButtonStyle}" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

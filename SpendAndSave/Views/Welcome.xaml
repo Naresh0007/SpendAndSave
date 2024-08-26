@@ -1,0 +1,37 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpendAndSave.Views.WelcomePage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+     <AbsoluteLayout>
+        <!-- Top left image -->
+         <Image Source="top_left_image.png" 
+               Aspect="AspectFit" 
+               WidthRequest="500" 
+               HeightRequest="120" 
+               AbsoluteLayout.LayoutBounds="0, 0, 150, 120"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Margin="0"/>
+
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" 
+                  AbsoluteLayout.LayoutFlags="All"
+                  Margin="10,50,10,10"> <!-- Adjusted top margin to account for the image height -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+            <!-- Main content in Row 1 -->
+            <StackLayout Grid.Row="1" StyleClass="stacklayout" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="20">
+                <Image Source="welcome.png" Aspect="AspectFit" WidthRequest="350" HeightRequest="350" Margin="0,20,0,0" />
+                <Label Text="Track Your Expenses with Budget Planner" FontAttributes="Bold" FontSize="16" HorizontalOptions="Center" Margin="0,10,0,5" />
+                <Label Text="Keep your finances on track with our Budget Planner. Easily monitor and manage your expenses to achieve your financial goals."
+                       FontAttributes="Bold" FontSize="12" HorizontalOptions="Center" Margin="0,10,0,5" />
+                
+                <Button Text="Get Started" FontAttributes="Bold" Clicked="OnGetStartedButtonClicked" Style="{StaticResource ButtonStyle}" Margin="10,50,10,10"/>
+            </StackLayout>
+        </Grid>
+     </AbsoluteLayout>
+
+</ContentPage>

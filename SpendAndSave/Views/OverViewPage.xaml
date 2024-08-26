@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:SpendAndSave.ViewModels"
+             x:Class="SpendAndSave.Views.OverViewPage"
+             Title="Overview"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0" BackgroundColor="{StaticResource NavBarBackground}" Padding="10" Margin="10">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Image Source="back.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Tapped="OnBackButtonClicked"/>
+				</Image.GestureRecognizers>
+			</Image>
+
+			<Label Text="Overview" FontAttributes="Bold" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" />
+
+		</Grid>
+		<Grid Grid.Row="1" Margin="15">
+			<StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+				<Label Text="{Binding CurrentMonthYear, StringFormat='{0:MMM d, yyyy}'}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
+				<Image Source="calendar_black.png" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" HorizontalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnCalendarClicked"/>
+					</Image.GestureRecognizers>
+				</Image>
+			</StackLayout>
+		</Grid>
+
+		<Grid Grid.Row="2" Margin="0,25,0,0">
+			<StackLayout>
+				<control:SfCircularChart>
+					<control:SfCircularChart.Title>
+						<Label Text="Budgeting Overview" HorizontalTextAlignment="Center"></Label>
+					</control:SfCircularChart.Title>
+					<control:SfCircularChart.Legend>
+						<control:ChartLegend></control:ChartLegend>
+					</control:SfCircularChart.Legend>
+					<control:DoughnutSeries ItemsSource="{Binding Data}"
+									   ExplodeOnTouch="True"
+									   Radius="0.9"
+									   InnerRadius="0.4"
+									   ShowDataLabels="True"
+									   XBindingPath="Name"
+									   EnableTooltip="True"
+									   YBindingPath="Amount">
+					</control:DoughnutSeries>
+				</control:SfCircularChart>
+			</StackLayout>
+		</Grid>
+		<Grid Grid.Row="3" Margin="0,25,0,0" >
+			<StackLayout  x:Name="BoxViewContainer" Margin="0,30,0,0"
+			 Padding="10">
+
+			</StackLayout>
+		</Grid>
+	</Grid>
+</ContentPage>

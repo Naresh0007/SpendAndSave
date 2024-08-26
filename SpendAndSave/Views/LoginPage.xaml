@@ -1,0 +1,45 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpendAndSave.Views.LoginPage"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+     <AbsoluteLayout>
+        <!-- Top left image -->
+         <Image Source="top_left_image.png" 
+               Aspect="AspectFit" 
+               WidthRequest="500" 
+               HeightRequest="120" 
+               AbsoluteLayout.LayoutBounds="0, 0, 150, 120"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Margin="0"/>
+
+    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" 
+              AbsoluteLayout.LayoutFlags="All"
+              Margin="20,100,20,20"> <!-- Adjusted top margin to account for the image height -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+        <!-- Main content in Row 1 -->
+        <StackLayout Grid.Row="1" StyleClass="stacklayout" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="20">
+            <Label Text="Welcome" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="0,10,0,5" />
+            <Image Source="login.png" Aspect="AspectFit" WidthRequest="200" HeightRequest="200" Margin="0,20,0,0" />
+            <Entry x:Name="UsernameEntry" Placeholder="Username" Style="{StaticResource EntryStyle}" Margin="10,0,10,10"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" Style="{StaticResource EntryStyle}" Margin="10,0,10,10"/>
+            <Button Text="Login" Clicked="OnLoginButtonClicked" Style="{StaticResource ButtonStyle}" Margin="10,50,10,10"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Don't have an account? " HorizontalOptions="EndAndExpand" Margin="0,20,0,0" />
+                <Label Text="Sign Up" TextColor="Blue" HorizontalOptions="Start" Margin="0,20,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterButtonClicked" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+        </AbsoluteLayout>
+
+</ContentPage>

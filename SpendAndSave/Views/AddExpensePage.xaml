@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpendAndSave.Views.AddExpensePage"
+             Title="Add Expense"
+             BackgroundColor="{StaticResource Background}"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Row 0 for top bar -->
+            <RowDefinition Height="*"/>    <!-- Row 1 for main content -->
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Padding="10" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="back.png" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBackButtonClicked"/>
+                </Image.GestureRecognizers>
+            </Image>    
+
+            <!-- Title in the middle -->
+            <Label Text="Add Expenses" FontAttributes="Bold" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" />
+
+        </Grid>
+
+        <!-- Main content in Row 1 -->
+        <ScrollView Grid.Row="1" Padding="10"  Margin="10">
+            <StackLayout Spacing="20">
+                <!-- Expense Entry Type -->
+                <StackLayout>
+                    <Label Text="Expense Entry Type" FontAttributes="Bold" Margin="0,0,0,15"/>
+                    <Entry x:Name="expenseEntry" />
+                </StackLayout>
+
+                <!-- Amount -->
+                <StackLayout>
+                    <Label Text="Amount" FontAttributes="Bold" Margin="0,0,0,15"/>
+                    <Entry x:Name="amountEntry" Keyboard="Numeric" />
+                </StackLayout>
+
+                <!-- Category -->
+                <StackLayout>
+                    <Label Text="Category" FontAttributes="Bold" />
+                    <Picker x:Name="categoryPicker" SelectedIndexChanged="OnCategorySelected">
+                        <!-- ItemsSource will be set dynamically -->
+                    </Picker>
+                </StackLayout>
+
+                
+                <!-- Date -->
+                <StackLayout>
+                    <Label Text="Date" FontAttributes="Bold" />
+                    <DatePicker x:Name="datePicker" />
+                </StackLayout>
+
+                <!-- Location -->
+                <StackLayout>
+                    <Label Text="Location (Optional)" FontAttributes="Bold" VerticalOptions="Center" Margin="0,0,0,15"/>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Entry x:Name="locationEntry" Placeholder="Enter location" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                        <Image Source="location.png" WidthRequest="25" HeightRequest="25" VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnDetectLocationClicked" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Add Receipt -->
+                <StackLayout>
+                    <Label Text="Add Receipt" FontAttributes="Bold" />
+                    <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                        <Image Source="browse.png" WidthRequest="70" HeightRequest="70">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnBrowseFilesClicked" />
+                            </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source="capture.png" WidthRequest="70" HeightRequest="70">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCameraClicked" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                    </StackLayout>
+                </StackLayout>
+
+                <Image x:Name="CapturedImage" WidthRequest="200" HeightRequest="200" />
+
+                <!-- Save Expense Button -->
+                <Button Text="Save Expense" Clicked="OnSaveExpenseButtonClicked" Style="{StaticResource ButtonStyle}" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
